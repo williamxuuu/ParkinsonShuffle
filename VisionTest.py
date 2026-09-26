@@ -1,3 +1,4 @@
+import os
 import time
 import cv2
 import mediapipe as mp
@@ -6,7 +7,8 @@ from mediapipe.tasks.python.core.base_options import BaseOptions
 from mediapipe.tasks.python.vision import PoseLandmarksConnections
 
 # Path to the model downloaded from Google's MediaPipe model garden.
-MODEL_PATH = "pose_landmarker_lite.task"
+# Resolved relative to this file so the script works from any working directory.
+MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pose_landmarker_lite.task")
 
 options = vision.PoseLandmarkerOptions(
     base_options=BaseOptions(model_asset_path=MODEL_PATH),

@@ -19,6 +19,8 @@ options = vision.PoseLandmarkerOptions(
 )
 
 cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    raise SystemExit("Could not open webcam (device 0). Check that a camera is connected and camera permissions are granted.")
 
 with vision.PoseLandmarker.create_from_options(options) as landmarker:
 

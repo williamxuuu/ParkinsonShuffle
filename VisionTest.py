@@ -1,3 +1,15 @@
+"""Live webcam test of MediaPipe's Pose Landmarker.
+
+Opens the default webcam, runs the lite pose model on each frame and draws
+the detected skeleton over the video. Press "q" in the video window to quit.
+
+Setup:
+    pip install mediapipe opencv-python
+
+Run:
+    python VisionTest.py
+"""
+
 import os
 import time
 import cv2

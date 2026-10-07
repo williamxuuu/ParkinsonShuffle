@@ -448,7 +448,7 @@ Example:
 ```text
 FoG if ≥ 30% of the window overlaps with expert FoG
 non-FoG if 0% overlap
-discard ambiguous windows between 1% and 30%
+discard ambiguous windows with more than 0% but less than 30% overlap
 ```
 
 This can improve training quality because transition windows are messy.

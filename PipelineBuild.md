@@ -671,6 +671,8 @@ spectral entropy
 
 For video pose data, this can be noisy, but it is a strong idea if the videos are stable enough.
 
+One practical caveat: frequency resolution is 1 / window length, so a 2-second window only resolves the spectrum in 0.5 Hz steps. That is coarse for the 0.5 to 3 Hz locomotor band, so you may want to compute the frequency features over a longer window (for example 4 seconds) centered on the same time point.
+
 ### G. Progression Features
 
 FoG is literally a failure or interruption of walking progression.

@@ -379,7 +379,7 @@ window length: 2 seconds
 step size: 0.25 to 0.5 seconds
 ```
 
-That gives a reasonably smooth timeline.
+That works out to 75% to 87.5% overlap between neighboring windows (overlap = 1 - step size / window length), a bit denser than the general range above, and it gives a reasonably smooth timeline.
 
 The output is:
 

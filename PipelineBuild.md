@@ -655,7 +655,7 @@ Conceptually:
 Freezing Index = power in freezing band / power in locomotor band
 ```
 
-Usually, normal walking happens at lower frequencies, while freezing trembling may show higher-frequency components.
+Usually, normal walking happens at lower frequencies, while freezing trembling may show higher-frequency components. The bands most often used (from Moore et al., 2008) are about 0.5 to 3 Hz for the locomotor band and 3 to 8 Hz for the freezing band, so a freezing index above 1 means more of the movement power sits in the trembling range than in normal stepping.
 
 With pose data, you could estimate this from ankle/foot trajectories using Fourier transform or power spectral density.
 

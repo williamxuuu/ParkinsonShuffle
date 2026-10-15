@@ -860,6 +860,8 @@ Suppose your windows are:
 
 You can plot this as a probability curve over time:
 
+(The example below labels each point by its window's start time for simplicity. When you compare against expert onset/offset times, place each probability at the window's center instead, for example 0.0 to 2.0 s → 1.0 s; using the start time shifts the whole timeline about half a window earlier than the movement it describes.)
+
 ```text
 time on x-axis
 FoG probability on y-axis

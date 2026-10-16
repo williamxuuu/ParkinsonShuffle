@@ -30,6 +30,9 @@ options = vision.PoseLandmarkerOptions(
     min_tracking_confidence=0.5,
 )
 
+if not os.path.isfile(MODEL_PATH):
+    raise SystemExit(f"Pose model not found at {MODEL_PATH}. Download pose_landmarker_lite.task and place it next to this script.")
+
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     raise SystemExit("Could not open webcam (device 0). Check that a camera is connected and camera permissions are granted.")

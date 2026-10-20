@@ -38,6 +38,7 @@ if not cap.isOpened():
     raise SystemExit("Could not open webcam (device 0). Check that a camera is connected and camera permissions are granted.")
 
 with vision.PoseLandmarker.create_from_options(options) as landmarker:
+    last_timestamp_ms = -1
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -48,8 +49,10 @@ with vision.PoseLandmarker.create_from_options(options) as landmarker:
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
 
-        # VIDEO mode needs a monotonically increasing timestamp in milliseconds
-        timestamp_ms = int(time.monotonic() * 1000)
+        # VIDEO mode needs a strictly increasing timestamp in milliseconds;
+        # two frames read within the same millisecond would otherwise raise.
+        timestamp_ms = max(int(time.monotonic() * 1000), last_timestamp_ms + 1)
+        last_timestamp_ms = timestamp_ms
         result = landmarker.detect_for_video(mp_image, timestamp_ms)
 
         if result.pose_landmarks:

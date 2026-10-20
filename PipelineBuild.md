@@ -119,7 +119,7 @@ left_knee:  x=0.51, y=0.62, z=-0.08, visibility=0.95
 left_ankle: x=0.54, y=0.81, z=-0.03, visibility=0.91
 ```
 
-The x and y coordinates are often normalized to the image dimensions, meaning x and y may range from 0 to 1 instead of raw pixel values.
+The x and y coordinates are normalized to the image width and height, meaning x and y range from about 0 to 1 instead of raw pixel values (they can fall slightly outside that range when a joint is off-screen). The z value is depth relative to the midpoint of the hips, with smaller values closer to the camera, on roughly the same scale as x. It is much noisier than x and y, so treat it with caution.
 
 This turns the video into a time series of body movement.
 

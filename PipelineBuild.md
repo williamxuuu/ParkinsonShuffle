@@ -817,7 +817,7 @@ For example, it might learn:
 FoG windows often have:
 - low ankle displacement
 - low hip progression
-- high high-frequency ankle power
+- elevated high-frequency ankle power
 - irregular left-right coordination
 - reduced knee angle range
 ```
